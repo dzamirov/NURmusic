@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="НУР MUSIC — музыкальные подборки, кыргызские мелодии и музыка для особых моментов.">
+  <meta name="theme-color" content="#07110e">
+  <title>НУР MUSIC — музыка, которая объединяет</title>
+  <style>
+    :root{--bg:#07110e;--panel:#101c17;--panel2:#14241d;--green:#50e3a4;--gold:#e9c77b;--text:#f5f7f5;--muted:#a8b8af;--line:#26382f}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 80% 0%,#173b2b 0,transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+    a{color:inherit;text-decoration:none} button,input{font:inherit}
+    .wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:5;background:#07110eea;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:1.5px}
+    .logo{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--green),#1a8c60);color:#062015;font-size:22px}
+    .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;font-weight:700}
+    nav{display:flex;gap:22px;color:var(--muted);font-size:14px} nav a:hover{color:var(--green)}
+    .hero{padding:72px 0 48px;display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}
+    .eyebrow{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:12px}
+    h1{font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-2px;margin:16px 0}
+    h1 span{color:var(--green)} .lead{color:var(--muted);font-size:18px;max-width:570px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:800;border:1px solid var(--line);cursor:pointer}
+    .primary{background:var(--green);color:#062015;border-color:var(--green)} .secondary{background:#ffffff08}
+    .hero-art{min-height:310px;border:1px solid #355342;border-radius:28px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;background:linear-gradient(145deg,#214b38,#0b1912 68%)}
+    .hero-art:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;border:1px solid #79e9b34d;right:-55px;top:20px;box-shadow:0 0 0 22px #79e9b311,0 0 0 48px #79e9b30b}
+    .art-symbol{position:relative;z-index:1;font-size:86px;color:var(--gold);line-height:1}
+    .art-caption{position:relative;z-index:1}.art-caption strong{display:block;font-size:23px}.art-caption small{color:#c3d5ca}
+    section{padding:32px 0 48px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:20px}
+    h2{font-size:clamp(25px,3vw,34px);margin:0;letter-spacing:-.6px}.sub{color:var(--muted);margin:5px 0 0}
+    .search{width:min(310px,100%);padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0d1913;color:var(--text);outline:none}.search:focus{border-color:var(--green)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid var(--line);background:linear-gradient(150deg,#12231a,#0d1712);border-radius:18px;padding:18px;min-height:195px;display:flex;flex-direction:column;transition:transform .18s,border-color .18s}
+    .card:hover{transform:translateY(-3px);border-color:#4e9f78}
+    .cover{height:88px;border-radius:12px;display:grid;place-items:center;font-size:37px;background:linear-gradient(135deg,#1e5c40,#173126);margin-bottom:15px}
+    .card:nth-child(3n+2) .cover{background:linear-gradient(135deg,#6b5124,#302819)}.card:nth-child(3n) .cover{background:linear-gradient(135deg,#254c67,#152733)}
+    .card h3{margin:0 0 5px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px;flex:1}
+    .card a{margin-top:15px;color:var(--green);font-weight:800;font-size:14px}
+    .note{border:1px solid #4a3d24;background:#241f13;color:#e9d9b4;border-radius:14px;padding:15px 17px;font-size:13px;margin-top:18px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:18px}.about article{border:1px solid var(--line);background:#0d1913;border-radius:18px;padding:22px}.about h3{margin-top:0}
+    .about p{color:var(--muted);margin-bottom:0}
+    footer{border-top:1px solid var(--line);padding:26px 0 35px;color:var(--muted);font-size:13px}
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .empty{display:none;color:var(--muted);padding:20px 0}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:48px}.hero-art{min-height:240px}.grid{grid-template-columns:1fr 1fr}nav{gap:12px;font-size:12px}.section-head{align-items:stretch;flex-direction:column}.search{width:100%}}
+    @media(max-width:480px){nav a:nth-child(2){display:none}.grid{grid-template-columns:1fr}.brand{font-size:14px}.hero{gap:22px}h1{letter-spacing:-1.3px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="НУР MUSIC — главная"><span class="logo">Н</span><span>НУР MUSIC<small>МУЗЫКА, КОТОРАЯ ОБЪЕДИНЯЕТ</small></span></a>
+    <nav aria-label="Основная навигация"><a href="#collections">Подборки</a><a href="#about">О проекте</a><a href="#contact">Контакты</a></nav>
+  </div>
+</header>
+<main>
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Кыргыз музыкасы • Музыкалык маанай</div>
+      <h1>Твоя музыка.<br><span>Твои моменты.</span></h1>
+      <p class="lead">НУР MUSIC — место для музыкальных подборок, кыргызских мелодий и песен для дороги, праздника и спокойного вечера.</p>
+      <div class="actions"><a class="btn primary" href="#collections">Открыть подборки ↓</a><a class="btn secondary" href="#about">О проекте</a></div>
+    </div>
+    <div class="hero-art" role="img" aria-label="Абстрактная музыкальная композиция">
+      <div class="art-symbol">♫</div>
+      <div class="art-caption"><strong>Музыка объединяет</strong><small>Кыргызстан • Культура • Настроение</small></div>
+    </div>
+  </div>
+  <section id="collections" class="wrap">
+    <div class="section-head"><div><h2>Выбери настроение</h2><p class="sub">Найди подборку по случаю или настроению.</p></div><input class="search" id="search" type="search" placeholder="Поиск подборок..." aria-label="Поиск подборок"></div>
+    <div class="grid" id="cards">
+      <article class="card" data-search="кыргызская музыка кыргыз ырлары кыргызстан"><div class="cover">🎼</div><h3>Кыргызская музыка</h3><p>Песни и мелодии Кыргызстана — культурная музыкальная подборка.</p><a href="https://www.youtube.com/results?search_query=кыргызча+ырлар+официалдуу" target="_blank" rel="noopener noreferrer">Найти официальные записи ↗</a></article>
+      <article class="card" data-search="комуз народная музыка инструментальная күү"><div class="cover">🪕</div><h3>Комуз и күү</h3><p>Инструментальные мелодии и звучание национальных инструментов.</p><a href="https://www.youtube.com/results?search_query=кыргыз+комуз+күүлөрү+расмий" target="_blank" rel="noopener noreferrer">Слушать официальные записи ↗</a></article>
+      <article class="card" data-search="свадьба той музыка кыргыз той ырлары"><div class="cover">💍</div><h3>Для свадьбы и тоя</h3><p>Идеи для праздничного настроения и музыкального сопровождения.</p><a href="https://www.youtube.com/results?search_query=кыргызча+той+ырлары+расмий" target="_blank" rel="noopener noreferrer">Найти песни ↗</a></article>
+      <article class="card" data-search="дорога путешествие авто музыка"><div class="cover">🚗</div><h3>В дорогу</h3><p>Подборка для поездки, путешествия и долгого пути.</p><a href="https://www.youtube.com/results?search_query=кыргызча+ырлар+жолдо+угууга" target="_blank" rel="noopener noreferrer">Подобрать музыку ↗</a></article>
+      <article class="card" data-search="спокойная музыка отдых вечер"><div class="cover">🌙</div><h3>Спокойный вечер</h3><p>Мягкое музыкальное настроение для отдыха и домашних дел.</p><a href="https://www.youtube.com/results?search_query=кыргыз+аспаптык+жай+музыка" target="_blank" rel="noopener noreferrer">Найти мелодии ↗</a></article>
+      <article class="card" data-search="новые песни исполнители кыргызстан артист"><div class="cover">✨</div><h3>Новые исполнители</h3><p>Открывай артистов и находи официальные страницы музыкантов.</p><a href="https://www.youtube.com/results?search_query=жаңы+кыргызча+ырлар+расмий" target="_blank" rel="noopener noreferrer">Открыть поиск ↗</a></article>
+    </div>
+    <p class="empty" id="empty">По этому запросу подборок не найдено. Попробуй другое слово.</p>
+    <div class="note"><strong>Важно:</strong> это первая демонстрационная версия каталога. Кнопки открывают поиск записей на YouTube, а не загружают музыку на наш сайт. Перед публикацией можно заменить их на конкретные официальные каналы артистов.</div>
+  </section>
+  <section id="about" class="wrap">
+    <div class="section-head"><div><h2>О НУР MUSIC</h2><p class="sub">Начинаем с простого — развиваем честно и постепенно.</p></div></div>
+    <div class="about">
+      <article><h3>🎧 Музыка и культура</h3><p>Мы собираем полезные музыкальные подборки и рассказываем об исполнителях. Уважение к авторам и их правам — обязательная часть проекта.</p></article>
+      <article id="contact"><h3>🤝 Предложить музыку</h3><p>Артист или слушатель может предложить подборку или официальный релиз. Напиши нам на почту: <a href="mailto:nur.music.example@gmail.com" style="color:var(--green)">nur.music.example@gmail.com</a></p><p style="font-size:12px">Перед запуском замени этот примерный адрес на свой рабочий email.</p></article>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> НУР MUSIC</span><span>Музыка • Культура • Кыргызстан</span><a href="#top">Наверх ↑</a></div></footer>
+<script>
+  const search = document.getElementById('search');
+  const cards = [...document.querySelectorAll('.card')];
+  const empty = document.getElementById('empty');
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLocaleLowerCase();
+    let shown = 0;
+    cards.forEach(card => {
+      const matches = (card.innerText + ' ' + card.dataset.search).toLocaleLowerCase().includes(q);
+      card.style.display = matches ? '' : 'none';
+      if (matches) shown++;
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
